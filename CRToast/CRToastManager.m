@@ -95,6 +95,7 @@ typedef void (^CRToastAnimationStepBlock)(void);
         notificationWindow.windowLevel = UIWindowLevelStatusBar;
         notificationWindow.rootViewController = [CRToastViewController new];
         notificationWindow.rootViewController.view.clipsToBounds = YES;
+	notificationWindow.windowScene = [[[UIApplication sharedApplication] connectedScenes] anyObject];
         self.notificationWindow = notificationWindow;
         
         self.notifications = [@[] mutableCopy];
